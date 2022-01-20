@@ -6,7 +6,7 @@ CREATE TABLE "Transaction" (
     "category" VARCHAR(255),
     "reference" VARCHAR(255),
     "currency" VARCHAR(255),
-    "amount" DOUBLE PRECISION NOT NULL,
+    "amount" TEXT NOT NULL,
     "status" VARCHAR(255),
     "transactionDate" TEXT NOT NULL,
     "createdAt" TEXT NOT NULL,

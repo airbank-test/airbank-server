@@ -1,12 +1,15 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 import * as trns from "./../transactions.json";
+
+type CreateManyInput = Omit<Prisma.TransactionCreateManyInput, "id">;
+type Trns = Array<Array<string>>;
 
 const prisma = new PrismaClient();
 
 async function main() {
-  const transactions = trns;
-  const keys = Object.keys(trns);
-  const transactionsArray = keys.map((key: any) => {
+  const transactions = trns as Trns;
+  const keys: string[] = Object.keys(trns);
+  const transactionsArray: CreateManyInput[] = keys.map((key: string | any) => {
     try {
       return {
         account: transactions[key][1].toString(),
@@ -21,9 +24,9 @@ async function main() {
         updatedAt: transactions[key][10].toString(),
       };
     } catch (error) {}
-  });
+  }) as CreateManyInput[];
   await prisma.transaction.createMany({
-    data: transactionsArray as any,
+    data: transactionsArray,
   });
 }
 
