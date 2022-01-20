@@ -1,7 +1,7 @@
 import prisma from "./../db";
 
 const Mutation = {
-  createTransaction: (parent: any, args: any) => {
+  createTransaction: (parent, args) => {
     return prisma.transaction.create({
       data: {
         ...args,
