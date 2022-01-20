@@ -8,7 +8,6 @@ The tech stack is composed of:
 - Express
 - Prisma
 - GraphQL
-- GraphQL
 - Apollo Server
 
 ## Installation & Running the server
