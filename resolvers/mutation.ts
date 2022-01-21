@@ -1,5 +1,5 @@
-import prisma from "./../db";
-import { Transaction } from "../types";
+import prisma from "../db/db";
+import { Transaction } from "../types/types";
 
 import { Prisma } from "@prisma/client";
 

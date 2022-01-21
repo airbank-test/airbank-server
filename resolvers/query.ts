@@ -1,5 +1,5 @@
-import { Transaction } from "../types";
-import prisma from "./../db";
+import { Transaction } from "../types/types";
+import prisma from "../db/db";
 
 const Query = {
   transactions: async (parent, args): Promise<Transaction[]> => {
