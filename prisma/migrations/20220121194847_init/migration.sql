@@ -6,11 +6,11 @@ CREATE TABLE "Transaction" (
     "category" VARCHAR(255),
     "reference" VARCHAR(255),
     "currency" VARCHAR(255),
-    "amount" TEXT NOT NULL,
+    "amount" DOUBLE PRECISION,
     "status" VARCHAR(255),
-    "transactionDate" TEXT NOT NULL,
-    "createdAt" TEXT NOT NULL,
-    "updatedAt" TEXT NOT NULL,
+    "transactionDate" TIMESTAMP(3),
+    "createdAt" TIMESTAMP(3),
+    "updatedAt" TIMESTAMP(3),
 
     CONSTRAINT "Transaction_pkey" PRIMARY KEY ("id")
 );

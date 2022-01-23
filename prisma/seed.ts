@@ -17,11 +17,11 @@ async function main() {
         category: transactions[key][3].toString(),
         reference: transactions[key][4].toString(),
         currency: transactions[key][5].toString(),
-        amount: transactions[key][6].toString(),
+        amount: +transactions[key][6].toString(),
         status: transactions[key][7].toString(),
-        transactionDate: transactions[key][8].toString(),
-        createdAt: transactions[key][9].toString(),
-        updatedAt: transactions[key][10].toString(),
+        transactionDate: new Date(transactions[key][8].toString()),
+        createdAt: new Date(transactions[key][9].toString()),
+        updatedAt: new Date(transactions[key][10].toString()),
       };
     } catch (error) {}
   }) as CreateManyInput[];

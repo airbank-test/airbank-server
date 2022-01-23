@@ -8,16 +8,35 @@ const typeDefs = gql`
     category: String
     reference: String
     currency: String
-    amount: String
+    amount: Float
     status: String
     transactionDate: String
     createdAt: String
     updatedAt: String
   }
 
+  type MetaData {
+    totalCount: Int
+    hasMorePages: Boolean
+  }
+
+  type TrnsReturn {
+    data: [Transaction]
+    metaData: MetaData
+  }
+
   type Query {
-    transactions: [Transaction]
+    transactions(
+      page: Int
+      pageSize: Int
+      endMonth: String
+      startMonth: String
+    ): TrnsReturn
     transaction(id: Int!): Transaction
+    transactionsBetweenMonths(
+      startMonth: String!
+      endMonth: String!
+    ): [Transaction]
   }
 
   type Mutation {
@@ -27,7 +46,7 @@ const typeDefs = gql`
       category: String
       reference: String
       currency: String
-      amount: String
+      amount: Float
       status: String
       transactionDate: String
       createdAt: String

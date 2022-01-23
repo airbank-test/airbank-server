@@ -5,9 +5,9 @@ export type Transaction = {
   category: string | null;
   reference: string | null;
   currency: string | null;
-  amount: string;
+  amount: number | null;
   status: string | null;
-  transactionDate: string;
-  createdAt: string;
-  updatedAt: string;
+  transactionDate: Date | string | null;
+  createdAt?: Date | string | null;
+  updatedAt?: Date | string | null;
 };

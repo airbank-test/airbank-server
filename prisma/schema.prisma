@@ -17,9 +17,9 @@ model Transaction {
   category String?    @db.VarChar(255)
   reference String?    @db.VarChar(255)
   currency String?    @db.VarChar(255)
-  amount    String
+  amount    Float?
   status String?    @db.VarChar(255)
-  transactionDate String
-  createdAt String
-  updatedAt String
+  transactionDate DateTime?
+  createdAt DateTime?
+  updatedAt DateTime?
 }
